@@ -24,15 +24,12 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import Teste from '~/Teste';
+import Routes from './routes';
 
 const App = () => {
   return (
     <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <Teste />
-      </SafeAreaView>
+      <Routes />
     </>
   );
 };
