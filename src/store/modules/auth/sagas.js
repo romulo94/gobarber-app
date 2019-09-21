@@ -33,7 +33,6 @@ export function* singUp({ payload }) {
       name,
       email,
       password,
-      provider: true,
     });
   } catch (error) {
     Alert.alert('Falha no cadastro', 'Houve um erro, verifique seus dados');
