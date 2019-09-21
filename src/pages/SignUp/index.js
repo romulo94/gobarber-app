@@ -1,15 +1,51 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { Image } from 'react-native';
 import Background from '~/components/Background';
 
-// import { Container } from './styles';
+import logo from '~/assets/logo.png';
 
-export default function SignUp() {
+import {
+  Container,
+  Form,
+  FormInput,
+  SubmitButton,
+  SignLink,
+  SignLinkText,
+} from './styles';
+
+export default function SignUp({ navigation }) {
   return (
     <Background>
-      <View>
-        <Text>Cadastro!</Text>
-      </View>
+      <Container>
+        <Image source={logo} />
+
+        <Form>
+          <FormInput
+            icon="person-outline"
+            autoCorrect={false}
+            autoCapitalize="none"
+            placeholder="Digite seu nome completo"
+          />
+          <FormInput
+            icon="mail-outline"
+            keyboardType="email-address"
+            autoCorrect={false}
+            autoCapitalize="none"
+            placeholder="Digite seu email"
+          />
+          <FormInput
+            icon="lock-outline"
+            secureTextEntry
+            placeholder="Digite sua senha"
+          />
+
+          <SubmitButton onPress={() => {}}>Acessar</SubmitButton>
+
+          <SignLink onPress={() => navigation.navigate('SignIn')}>
+            <SignLinkText>Acessar conta</SignLinkText>
+          </SignLink>
+        </Form>
+      </Container>
     </Background>
   );
 }
