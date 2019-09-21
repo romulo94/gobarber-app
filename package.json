@@ -9,6 +9,7 @@
     "postinstall": "jetify"
   },
   "dependencies": {
+    "immer": "^4.0.0",
     "prop-types": "^15.7.2",
     "react": "16.8.6",
     "react-native": "0.60.5",
@@ -16,6 +17,12 @@
     "react-native-linear-gradient": "^2.5.6",
     "react-native-vector-icons": "^6.6.0",
     "react-navigation": "^4.0.6",
+    "react-redux": "^7.1.1",
+    "reactotron-react-native": "^4.0.0",
+    "reactotron-redux": "^3.1.2",
+    "reactotron-redux-saga": "^4.2.2",
+    "redux": "^4.0.4",
+    "redux-saga": "^1.1.1",
     "styled-components": "^4.3.2"
   },
   "devDependencies": {
