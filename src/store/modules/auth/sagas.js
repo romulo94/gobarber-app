@@ -34,6 +34,8 @@ export function* singUp({ payload }) {
       email,
       password,
     });
+
+    yield put(signFailure());
   } catch (error) {
     Alert.alert('Falha no cadastro', 'Houve um erro, verifique seus dados');
 
