@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { withNavigationFocus } from 'react-navigation';
 import api from '~/services/api';
@@ -10,17 +10,17 @@ import { Container, Title, List } from './styles';
 function Dashboard({ isFocused }) {
   const [appointmets, setAppointments] = useState([]);
 
-  async function loadAppointments() {
+  const loadAppointments = useCallback(async () => {
     const response = await api.get('appointments');
 
     setAppointments(response.data);
-  }
+  }, []);
 
   useEffect(() => {
     if (isFocused) {
       loadAppointments();
     }
-  }, [isFocused]);
+  }, [isFocused, loadAppointments]);
 
   async function handleCancel(id) {
     const response = await api.delete(`appointments/${id}`);
@@ -35,6 +35,7 @@ function Dashboard({ isFocused }) {
           : appointmet
       )
     );
+    loadAppointments();
   }
 
   return (

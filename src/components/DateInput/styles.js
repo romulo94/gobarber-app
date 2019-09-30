@@ -22,6 +22,7 @@ export const DateText = styled.Text`
 `;
 
 export const Picker = styled.View`
+  position: ${Platform.OS === 'ios' ? 'relative' : 'absolute'};
   background: ${Platform.OS === 'ios' ? '#fff' : 'transparent'};
   padding: 15px 30px;
   margin-top: 30px;
